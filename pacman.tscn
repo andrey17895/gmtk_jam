@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsripr4tc844y"]
+
+[ext_resource type="Script" path="res://pacman.gd" id="1_23gdg"]
+[ext_resource type="Texture2D" uid="uid://dji81wq2x8qcr" path="res://assets/mouse.png" id="2_icq0n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ylfge"]
+radius = 30.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_23gdg")
+
+[node name="Pacman" type="Sprite2D" parent="."]
+texture = ExtResource("2_icq0n")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 260
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ylfge")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
