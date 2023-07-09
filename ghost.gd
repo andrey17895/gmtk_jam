@@ -9,8 +9,9 @@ func _ready():
 
 func _physics_process(_delta: float) -> void:
 	var direction = to_local(nav_agent.get_next_path_position())
-	velocity = direction.normalized() * speed
-	move_and_slide()
+	if nav_agent.distance_to_target() > 10:
+		velocity = direction.normalized() * speed
+		move_and_slide()
 
 func make_path() -> void:
 	nav_agent.target_position = target.global_position

@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://4w21acm8ig53" path="res://icon.svg" id="1_vij8h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iv4rk"]
-radius = 12.0
+radius = 20.0
 
 [node name="ghost" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_e882q")
+speed = 150
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
