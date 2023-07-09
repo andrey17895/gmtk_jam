@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 10
-@export var target: Node2D
+@export var target :Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
 func _ready():
