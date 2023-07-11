@@ -119,3 +119,14 @@ visible = false
 position = Vector2(506, 453)
 scale = Vector2(1.59125, 1.46875)
 texture = ExtResource("9_bp6hj")
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 444.0
+offset_top = 567.0
+offset_right = 571.0
+offset_bottom = 637.0
+disabled = true
+text = "Restart"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
